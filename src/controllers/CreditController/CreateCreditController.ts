@@ -1,7 +1,7 @@
 
 import { FastifyRequest, FastifyReply } from "fastify";
-import { CreateCreditModalityService } from "../services/CreateCreditService"; 
-import { ICreateCreditModalityDTO } from "../interfaces/ICreateCreditDTO"; 
+import { CreateCreditModalityService } from "../../services/CreditService/CreateCreditService"; 
+import { ICreateCreditModalityDTO } from "../../interfaces/ICreateCreditDTO"; 
 
 class CreateCreditModalityController {
   async handle(request: FastifyRequest, reply: FastifyReply) {

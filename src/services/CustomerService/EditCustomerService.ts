@@ -1,7 +1,7 @@
 // src/services/EditCustomerService.ts
-import prismaClient from "../prisma";
+import prismaClient from "../../prisma";
 import { Client } from '@prisma/client'; // Importe o tipo Client do Prisma
-import { IEditCustomerDTO } from "../interfaces/IEditCustomerDTO";
+import { IEditCustomerDTO } from "../../interfaces/IEditCustomerDTO";
 
 
 class EditCustomerService {

@@ -1,5 +1,5 @@
 import { FastifyRequest, FastifyReply } from "fastify";
-import { ListFinancingLinesService } from "../services/ListFinancingLinesService";
+import { ListFinancingLinesService } from "../../services/FinancingService/ListFinancingLinesService";
 
 class ListFinancingLinesController {
   async handle(request: FastifyRequest, reply: FastifyReply) {

@@ -1,7 +1,7 @@
 // src/services/EditCreditModalityService.ts
-import prismaClient from "../prisma";
+import prismaClient from "../../prisma";
 import { CreditModality } from '@prisma/client';
-import { IEditCreditModalityDTO } from "../interfaces/IEditCreditDTO";
+import { IEditCreditModalityDTO } from "../../interfaces/IEditCreditDTO";
 
 class EditCreditModalityService {
   async execute(id: string, data: IEditCreditModalityDTO): Promise<CreditModality> {

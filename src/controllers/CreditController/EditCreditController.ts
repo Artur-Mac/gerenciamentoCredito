@@ -1,7 +1,7 @@
 // src/controllers/EditCreditModalityController.ts
 import { FastifyRequest, FastifyReply } from "fastify";
-import { IEditCreditModalityDTO } from "../interfaces/IEditCreditDTO";
-import { EditCreditModalityService } from "../services/EditCreditService";
+import { IEditCreditModalityDTO } from "../../interfaces/IEditCreditDTO";
+import { EditCreditModalityService } from "../../services/CreditService/EditCreditService";
 
 interface IEditCreditModalityParams {
   id: string;

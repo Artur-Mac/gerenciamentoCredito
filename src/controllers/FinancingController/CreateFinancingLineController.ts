@@ -1,6 +1,6 @@
 import { FastifyRequest, FastifyReply } from "fastify";
-import { ICreateFinancingLineDTO } from "../interfaces/ICreateFinancingLineDTO";
-import { CreateFinancingLineService } from "../services/CreateFinancingLineService";
+import { ICreateFinancingLineDTO } from "../../interfaces/ICreateFinancingLineDTO";
+import { CreateFinancingLineService } from "../../services/FinancingService/CreateFinancingLineService";
 
 class CreateFinancingLineController {
   async handle(request: FastifyRequest, reply: FastifyReply) {

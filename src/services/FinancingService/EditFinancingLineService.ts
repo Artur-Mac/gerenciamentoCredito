@@ -1,7 +1,7 @@
 // src/services/EditFinancingLineService.ts
-import prismaClient from "../prisma";
+import prismaClient from "../../prisma";
 import { FinancingLine } from '@prisma/client';
-import { IEditFinancingLineDTO } from "../interfaces/IEditFinancingLineDTO";
+import { IEditFinancingLineDTO } from "../../interfaces/IEditFinancingLineDTO";
 
 class EditFinancingLineService {
   async execute(id: string, data: IEditFinancingLineDTO): Promise<FinancingLine> {

@@ -1,6 +1,6 @@
-import prismaClient from "../prisma";
+import prismaClient from "../../prisma";
 import { CreditModality } from '@prisma/client'; 
-import { ICreateCreditModalityDTO } from "../interfaces/ICreateCreditDTO"
+import { ICreateCreditModalityDTO } from "../../interfaces/ICreateCreditDTO"
 
 class CreateCreditModalityService {
   async execute(data: ICreateCreditModalityDTO): Promise<CreditModality> {

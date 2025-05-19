@@ -1,13 +1,13 @@
 import { FastifyInstance, FastifyPluginOptions, FastifyRequest, FastifyReply } from "fastify";
-import { CreateCostumerController } from "./controllers/CreateCustomersController";
-import { ListCustomersController } from "./controllers/ListCustomersController";
-import { ListCreditController } from "./controllers/ListCreditController";
-import { EditCustomerController } from "./controllers/EditCustomerController";
-import { CreateCreditModalityController } from "./controllers/CreateCreditController";
-import { EditCreditModalityController } from "./controllers/EditCreditController";
-import { ListFinancingLinesController } from "./controllers/ListFinancingLinesController";
-import { CreateFinancingLineController } from "./controllers/CreateFinancingLineController";
-import { EditFinancingLineController } from "./controllers/EditFinancingLineController";
+import { CreateCostumerController } from "./controllers/CustomerController/CreateCustomersController";
+import { ListCustomersController } from "./controllers/CustomerController/ListCustomersController";
+import { ListCreditController } from "./controllers/CreditController/ListCreditController";
+import { EditCustomerController } from "./controllers/CustomerController/EditCustomerController";
+import { CreateCreditModalityController } from "./controllers/CreditController/CreateCreditController";
+import { EditCreditModalityController } from "./controllers/CreditController/EditCreditController";
+import { ListFinancingLinesController } from "./controllers/FinancingController/ListFinancingLinesController";
+import { CreateFinancingLineController } from "./controllers/FinancingController/CreateFinancingLineController";
+import { EditFinancingLineController } from "./controllers/FinancingController/EditFinancingLineController";
 
 export async function routes(fastify: FastifyInstance, option: FastifyPluginOptions) {
   fastify.get("/test", async () => {

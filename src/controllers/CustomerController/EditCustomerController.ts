@@ -1,7 +1,7 @@
 // src/controllers/EditCustomerController.ts
 import { FastifyRequest, FastifyReply } from "fastify";
-import { IEditCustomerDTO } from "../interfaces/IEditCustomerDTO";
-import { EditCustomerService } from "../services/EditCustomerService";
+import { IEditCustomerDTO } from "../../interfaces/IEditCustomerDTO";
+import { EditCustomerService } from "../../services/CustomerService/EditCustomerService";
 
 interface IEditCustomerParams {
   id: string;

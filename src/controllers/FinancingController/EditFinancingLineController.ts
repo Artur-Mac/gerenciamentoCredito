@@ -1,6 +1,6 @@
 import { FastifyRequest, FastifyReply } from "fastify";
-import { IEditFinancingLineDTO } from "../interfaces/IEditFinancingLineDTO";
-import { EditFinancingLineService } from "../services/EditFinancingLineService";
+import { IEditFinancingLineDTO } from "../../interfaces/IEditFinancingLineDTO";
+import { EditFinancingLineService } from "../../services/FinancingService/EditFinancingLineService";
 
 interface IEditFinancingLineParams {
   id: string;

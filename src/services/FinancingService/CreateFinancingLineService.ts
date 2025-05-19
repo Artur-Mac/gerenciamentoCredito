@@ -1,6 +1,6 @@
-import prismaClient from "../prisma";
+import prismaClient from "../../prisma";
 import { FinancingLine } from '@prisma/client';
-import { ICreateFinancingLineDTO } from "../interfaces/ICreateFinancingLineDTO";
+import { ICreateFinancingLineDTO } from "../../interfaces/ICreateFinancingLineDTO";
 
 class CreateFinancingLineService {
   async execute(data: ICreateFinancingLineDTO): Promise<FinancingLine> {

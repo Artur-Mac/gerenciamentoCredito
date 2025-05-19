@@ -1,6 +1,6 @@
 import { FastifyRequest, FastifyReply } from "fastify";
 
-import { CreateCostumerService } from "../services/CreateCustomersService";
+import { CreateCostumerService } from "../../services/CustomerService/CreateCustomersService";
 
 class CreateCostumerController {
     
