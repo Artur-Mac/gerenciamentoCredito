@@ -37,10 +37,10 @@ model CreditModality {
   maxAge             Int?
   minIncome          Float?
   maxIncome          Float?
-  interestRate       Float? // Annual percentage for fixed rate
-  interestType       String? // e.g., "FIXED", "IPCA_LINKED", "TR_LINKED", "ADMIN_FEE_CONSORTIUM"
+  interestRate       Float? 
+  interestType       String? 
   maxTermYears       Int
-  adminFeePercentage Float? // For consortium, as a percentage of property value
+  adminFeePercentage Float? 
   description        String?
   isActive           Boolean             @default(true)
   createdAt          DateTime            @default(now())
@@ -68,7 +68,7 @@ model CreditApplication {
   creditModality   CreditModality @relation(fields: [creditModalityId], references: [id])
   financingLineId  String         @db.ObjectId 
   financingLine    FinancingLine  @relation(fields: [financingLineId], references: [id])
-  status           ApplicationStatus         @default(PENDING) // PENDING, APPROVED, REJECTED
+  status           ApplicationStatus         @default(PENDING) 
   requestedAmount  Float?
   propertyValue Float?
 

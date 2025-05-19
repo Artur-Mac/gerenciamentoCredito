@@ -3,7 +3,7 @@ import { ListCreditService } from "../services/ListCreditService";
 
 class ListCreditController {
   async handle(request: FastifyRequest, reply: FastifyReply) {
-    // Extrair os filtros do query string
+    
     const {
       minAge,
       maxAge,

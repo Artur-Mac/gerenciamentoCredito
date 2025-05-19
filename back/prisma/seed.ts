@@ -6,8 +6,7 @@ const prisma = new PrismaClient();
 async function main() {
   console.log('Start seeding ...');
 
-  // Dados dos clientes
-  // Dados dos clientes
+ 
 const clients = [
   {
     name: 'João Silva',
@@ -35,7 +34,7 @@ const clients = [
   },
 ];
 
-  // Inserir clientes no banco de dados
+  
   for (const client of clients) {
     await prisma.client.upsert({
       where: { email: client.email },
@@ -44,7 +43,7 @@ const clients = [
     });
   }
 
-  // Seed Credit Modalities
+
   const fixedJuros = await prisma.creditModality.upsert({
     where: { name: 'Crédito com Juros Fixos' },
     update: {},
@@ -52,7 +51,7 @@ const clients = [
       name: 'Crédito com Juros Fixos',
       minAge: 18,
       maxAge: 25,
-      interestRate: 5.0, // 5% a.a.
+      interestRate: 5.0, 
       interestType: 'FIXED',
       maxTermYears: 40,
       description: 'Aplicado a clientes com idade entre 18 e 25 anos, independente de renda. Taxa de 5% a.a. Prazo de 40 anos.',
@@ -69,7 +68,7 @@ const clients = [
       maxAge: 65,
       minIncome: 5000.00,
       maxIncome: 15000.00,
-      interestType: 'IPCA_LINKED', // Placeholder for actual rate calculation logic if needed
+      interestType: 'IPCA_LINKED', 
       maxTermYears: 30,
       description: 'Aplicado a clientes com idade entre 21 e 65 anos, com renda entre R$ 5000,00 e R$ 15000,00. Prazo de 30 anos.',
       isActive: true,
@@ -98,7 +97,7 @@ const clients = [
     create: {
       name: 'Crédito Consórcio',
       minAge: 40,
-      adminFeePercentage: 20.0, // 20%
+      adminFeePercentage: 20.0, 
       interestType: 'ADMIN_FEE_CONSORTIUM',
       maxTermYears: 10,
       description: 'Aplicado a clientes acima de 40 anos, independente de renda. Prazo de 10 anos. Taxa de Administração de 20% do valor total do imóvel.',
@@ -107,7 +106,7 @@ const clients = [
   });
   console.log({ fixedJuros, ipcaJuros, trJuros, consorcio });
 
-  // Seed Financing Lines
+  
   const aptoNovo = await prisma.financingLine.upsert({
     where: { name: 'Apartamento novo' },
     update: {},
@@ -116,7 +115,7 @@ const clients = [
       propertyType: 'NEW_APARTMENT',
       description: 'Qualquer modalidade de crédito.',
       isActive: true,
-      // No disallowedModalityTypes, meaning all are allowed by default
+      
     },
   });
 
@@ -127,7 +126,7 @@ const clients = [
       name: 'Apartamento usado',
       propertyType: 'USED_APARTMENT',
       description: 'Não pode ser consórcio.',
-      disallowedModalityTypes: ['ADMIN_FEE_CONSORTIUM'], // Consorcio interestType
+      disallowedModalityTypes: ['ADMIN_FEE_CONSORTIUM'], 
       isActive: true,
     },
   });
@@ -157,21 +156,20 @@ const clients = [
   console.log({ aptoNovo, aptoUsado, terrenoConstrucao, construcaoProprio });
 
   const client1 = await prisma.client.findFirst({
-    where: { email: 'alice.wonderland@example.com' }, // Substitua pelo email ou outra condição
+    where: { email: 'alice.wonderland@example.com' }, 
   });
   if (!client1) {
     throw new Error('Client not found');
   }
 
 
-  // Seed an example Credit Application
+  
   const application1 = await prisma.creditApplication.create({
     data: {
       client: { connect: { id: client1.id } },
       creditModality: { connect: { id: fixedJuros.id } },
       financingLine: { connect: { id: aptoNovo.id } },
-      // requestedAmount: 200000,
-      // propertyValue: 250000,
+
       status: ApplicationStatus.PENDING,
     },
   });
