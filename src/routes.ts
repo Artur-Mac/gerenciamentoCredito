@@ -2,6 +2,8 @@ import { FastifyInstance, FastifyPluginOptions, FastifyRequest, FastifyReply } f
 import { CreateCostumerController } from "./controllers/CreateCustomersController";
 import { ListCustomersController } from "./controllers/ListCustomersController";
 import { ListCreditController } from "./controllers/ListCreditController";
+import { EditCustomerController } from "./controllers/EditCustomerController";
+import { CreateCreditModalityController } from "./controllers/CreateCreditController";
 
 export async function routes(fastify: FastifyInstance, option: FastifyPluginOptions) {
     fastify.get("/test", async () => {
@@ -17,6 +19,17 @@ export async function routes(fastify: FastifyInstance, option: FastifyPluginOpti
       });
     fastify.get("/listcredits", async (request: FastifyRequest, reply: FastifyReply) => {
       return new ListCreditController().handle(request, reply);
+    });
+
+    const editCustomerController = new EditCustomerController();
+
+    fastify.put(
+    '/customers/:id',
+    (request: FastifyRequest, reply: FastifyReply) => editCustomerController.handle(request, reply)
+  );
+
+  fastify.post("/credit", async (request: FastifyRequest, reply: FastifyReply) => {
+      return new CreateCreditModalityController().handle(request, reply);
     });
   }
   

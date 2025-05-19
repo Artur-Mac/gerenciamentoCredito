@@ -3,8 +3,8 @@ import prismaClient from "../prisma";
 interface ICreateCostumerService {
   name: string;
   email: string;
-  age: number; // Adicionado
-  income: number; // Adicionado
+  age: number; 
+  income: number; 
 }
 
 class CreateCostumerService {
