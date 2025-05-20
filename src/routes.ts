@@ -8,6 +8,7 @@ import { EditCreditModalityController } from "./controllers/CreditController/Edi
 import { ListFinancingLinesController } from "./controllers/FinancingController/ListFinancingLinesController";
 import { CreateFinancingLineController } from "./controllers/FinancingController/CreateFinancingLineController";
 import { EditFinancingLineController } from "./controllers/FinancingController/EditFinancingLineController";
+import { CreateCreditApplicationController } from "./controllers/creditAplication/CreateCreditApplicationController";
 
 export async function routes(fastify: FastifyInstance, option: FastifyPluginOptions) {
   fastify.get("/test", async () => {
@@ -56,4 +57,8 @@ export async function routes(fastify: FastifyInstance, option: FastifyPluginOpti
       return new EditFinancingLineController().handle(request, reply);
     }
   );
+  fastify.post("/creditapplication", async (request: FastifyRequest, reply: FastifyReply) => {
+    return new CreateCreditApplicationController().handle(request, reply);
+  });
+  
 }

@@ -4,29 +4,39 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "tsx watch src/server.ts", 
-    "prisma:generate": "prisma generate", 
-    "prisma:migrate": "prisma migrate deploy", 
-    "prisma:studio": "prisma studio", 
-    "seed": "npx prisma db seed", 
-    "postinstall": "prisma generate" 
+    "dev": "tsx watch src/server.ts",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate deploy",
+    "prisma:studio": "prisma studio",
+    "seed": "npx prisma db seed",
+    "postinstall": "prisma generate"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/node": "^22.15.18", 
-    "prisma": "^6.8.2", 
+    "@types/node": "^22.15.18",
+    "@types/react": "^19.1.4",
+    "@types/react-dom": "^19.1.5",
+    "@types/react-router-dom": "^5.3.3",
+    "prisma": "^6.8.2",
     "ts-node": "^10.9.2",
-    "typescript": "^5.8.3" 
+    "typescript": "^5.8.3"
   },
   "prisma": {
-    "seed": "ts-node back/prisma/seed.ts" 
+    "seed": "ts-node back/prisma/seed.ts"
   },
   "dependencies": {
-    "@fastify/cors": "^11.0.1", 
-    "@prisma/client": "^6.8.2", 
-    "fastify": "^5.3.3", 
-    "tsx": "^4.19.4" 
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@fastify/cors": "^11.0.1",
+    "@mui/material": "^7.1.0",
+    "@prisma/client": "^6.8.2",
+    "axios": "^1.9.0",
+    "fastify": "^5.3.3",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.6.0",
+    "tsx": "^4.19.4"
   }
 }

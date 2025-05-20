@@ -15,15 +15,15 @@ class CreateCreditModalityService {
       interestType,
       adminFeePercentage,
       description,
-      isActive, // isActive é opcional na DTO, mas pode ser passado
+      isActive, 
     } = data;
 
-    // 1. Validação dos campos obrigatórios
-    if (!name || !maxTermYears) { // maxTermYears também é obrigatório pelo schema
+    
+    if (!name || !maxTermYears) { 
       throw new Error("Required fields 'name' and 'maxTermYears' must be provided.");
     }
 
-    // 2. Verificar se já existe uma modalidade de crédito com o mesmo nome (que é único)
+    
     const existingModality = await prismaClient.creditModality.findUnique({
       where: {
         name: name,
