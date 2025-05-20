@@ -11,7 +11,8 @@ logs/
 
 # Prisma
 .prisma/
-
+.env
+.env.*
 
 # TypeScript
 dist/
